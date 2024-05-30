@@ -1,24 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import EnhancedDogImages from "./components/HOC/DogImage";
-
-type WithStylesProps<P> = P & {
-  style: React.CSSProperties;
-};
-function withStyles<P>(Component: React.FC<WithStylesProps<P>>) {
-  return (props: P) => {
-    const style = { padding: "0.2rem", margin: "1rem" };
-    return <Component style={style} {...props} />;
-  };
-}
-
-const Button = () => <button>Click me!</button>;
-const Text = () => <p style={{ color: "black" }}>Hello world!</p>;
-
-const StyledButton = withStyles(Button);
-const StyledText = withStyles(Text);
+import Kelvin from "./components/render-prop-pattern/Kelvin";
+import Fahrenheit from "./components/render-prop-pattern/Fahrenheit";
+import Input from "./components/render-prop-pattern/Input";
+import Title from "./components/render-prop-pattern/Text";
+import { StyledButton, StyledText } from "./components/HOC/StyledParts";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -44,6 +33,29 @@ function App() {
         <StyledButton />
         <StyledText />
         <EnhancedDogImages />
+        <Title
+          renderFirstComponent={() => (
+            <h1>
+              <span role="img" aria-label="emoji">
+                ⭐️
+              </span>
+              I am a render props!!
+              <span role="image" aria-label="emoji">
+                ⭐️
+              </span>
+            </h1>
+          )}
+          renderSecondComponent={() => <h2>🔥 Second render prop! 🔥</h2>}
+          renderThirdComponent={() => <h3>🚀 Third render prop! 🚀</h3>}
+        />
+        <Input
+          render={(value) => (
+            <>
+              <Kelvin value={value} />
+              <Fahrenheit value={value} />
+            </>
+          )}
+        />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
