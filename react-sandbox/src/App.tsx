@@ -3,11 +3,12 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import EnhancedDogImages from "./components/HOC/DogImage";
-import Kelvin from "./components/render-prop-pattern/Kelvin";
-import Fahrenheit from "./components/render-prop-pattern/Fahrenheit";
-import Input from "./components/render-prop-pattern/Input";
+// import Kelvin from "./components/render-prop-pattern/Kelvin";
+// import Fahrenheit from "./components/render-prop-pattern/Fahrenheit";
+// import Input from "./components/render-prop-pattern/Input";
 import Title from "./components/render-prop-pattern/Text";
 import { StyledButton, StyledText } from "./components/HOC/StyledParts";
+import Input from "./hook-pattern/Input";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -48,14 +49,16 @@ function App() {
           renderSecondComponent={() => <h2>🔥 Second render prop! 🔥</h2>}
           renderThirdComponent={() => <h3>🚀 Third render prop! 🚀</h3>}
         />
-        <Input
+        {/* <Input
           render={(value) => (
             <>
               <Kelvin value={value} />
               <Fahrenheit value={value} />
             </>
           )}
-        />
+        /> */}
+        <br />
+        <Input />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
