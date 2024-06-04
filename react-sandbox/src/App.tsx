@@ -8,7 +8,8 @@ import EnhancedDogImages from "./components/HOC/DogImage";
 // import Input from "./components/render-prop-pattern/Input";
 import Title from "./components/render-prop-pattern/Text";
 import { StyledButton, StyledText } from "./components/HOC/StyledParts";
-import Input from "./hook-pattern/Input";
+import Input from "../src/components/hook-pattern/Input";
+import ImageList from "../src/components/compound-component-pattern/Image";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -59,6 +60,7 @@ function App() {
         /> */}
         <br />
         <Input />
+        <ImageList />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
