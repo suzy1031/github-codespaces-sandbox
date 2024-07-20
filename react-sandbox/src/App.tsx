@@ -2,7 +2,8 @@
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 import "./App.css";
-import { Main } from "./components/Main";
+// import { Main } from "./components/Main";
+import { Sub } from "./components/Sub";
 // import EnhancedDogImages from "./components/HOC/DogImage";
 // // import Kelvin from "./components/render-prop-pattern/Kelvin";
 // // import Fahrenheit from "./components/render-prop-pattern/Fahrenheit";
@@ -66,10 +67,15 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div>
+      {/* <div>
         this is No.1: <Main greet="hello" />
         this is No.2: <Main greet="goodbye" />
         this is No.3: <Main />
+      </div> */}
+      <div>
+        <p>this is No.1:</p> <Sub useResponsive visibleFooter />
+        <p>this is No.2:</p> <Sub useResponsive visibleFooter={false} />
+        <p>this is No.3:</p> <Sub useResponsive={false} />
       </div>
     </>
   );
