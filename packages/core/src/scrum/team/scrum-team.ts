@@ -1,5 +1,5 @@
-import { Id } from "../common/id";
-import { Member } from "../company/employee";
+import { Id } from "../../common/id";
+import { Member } from "../../company/employee";
 
 // ドメイン層 (The Clean Architecture Entities)
 // 同じパッケージ内の common（ID 管理のため）と company（社員管理のため）にしか依存しておらず、core パッケージ内で完結しています。これはドメイン層が独立している
@@ -34,6 +34,14 @@ export class ScrumTeam {
     public readonly scrumMaster: ScrumMaster,
     public readonly developers: Developer[]
   ) {}
+}
+
+export interface ScrumTeamRepositoryInterface {
+  fetchOrFail(): Promise<ScrumTeam>;
+  exists(): Promise<boolean>;
+  save(scrumTeam: ScrumTeam): Promise<void>;
+  update(scrumTeam: ScrumTeam): Promise<void>;
+  delete(): Promise<void>;
 }
 
 export class ProductOwner {
