@@ -42,6 +42,16 @@ export class Employee {
   }
 }
 
+// crud操作
+export interface EmployeeRepositoryInterface {
+  findByIdOrFail(id: EmployeeId): Promise<Employee>;
+  findAll(): Promise<Employee[]>;
+  count(): Promise<number>;
+  save(employee: Employee): Promise<Employee>;
+  update(employee: Employee): Promise<Employee>;
+  delete(employee: Employee): Promise<void>;
+}
+
 export class Member {
   constructor(public readonly employee: Employee) {}
 
