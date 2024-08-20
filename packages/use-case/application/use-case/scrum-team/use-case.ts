@@ -40,7 +40,7 @@ export class ScrumTeamUseCase {
 
     const prevScrumTeam = await this.scrumTeamRepository.fetchOrFail();
     const newScrumTeam = prevScrumTeam
-      .changeProdcutOwner(newProductOwner)
+      .changeProductOwner(newProductOwner)
       .changeScrumMaster(newScrumMaster)
       .changeDevelopers(developers);
     await this.scrumTeamRepository.update(newScrumTeam);
