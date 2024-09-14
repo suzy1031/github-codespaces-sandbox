@@ -1,0 +1,3 @@
+[submodule "express-monorepo-app"]
+	path = express-monorepo-app
+	url = https://github.com/suzy1031/express-monorepo-app

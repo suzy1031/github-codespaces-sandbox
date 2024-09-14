@@ -12,6 +12,10 @@ import { Sub } from "./components/Sub";
 // import { StyledButton, StyledText } from "./components/HOC/StyledParts";
 // import Input from "../src/components/hook-pattern/Input";
 // import ImageList from "../src/components/compound-component-pattern/Image";
+// import { Provider } from "react-redux";
+// import store from "./redux/store/index";
+// import Counter from "./components/Counter";
+// import CounterControls from "./components/CounterControls";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -77,6 +81,10 @@ function App() {
         <p>this is No.2:</p> <Sub useResponsive visibleFooter={false} />
         <p>this is No.3:</p> <Sub useResponsive={false} />
       </div>
+      {/* <Provider store={store}>
+        <Counter />
+        <CounterControls />
+      </Provider> */}
     </>
   );
 }
